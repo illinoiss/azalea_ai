@@ -13,9 +13,13 @@ from aiogram.types import (
 from gpt4all import GPT4All
 from storage import load_users, save_users, init_user
 from aiogram.client.default import DefaultBotProperties
+from huggingface_hub import hf_hub_download
 
 # === Config ===
-MODEL_PATH = "Nous-Hermes-2-Mistral-7B-DPO.Q4_0.gguf"
+MODEL_PATH = hf_hub_download(
+    repo_id="illinoiss/azalea_models",
+    filename="Nous-Hermes-2-Mistral-7B-DPO.Q4_0.gguf"
+)
 GIF_PATH = "loading.gif"
 BOT_TOKEN = "7951682131:AAECP42JvI0JZyvQXWxxkqRfBwUL9bCzdzg"
 DAILY_LIMIT = 10
